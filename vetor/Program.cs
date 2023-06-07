@@ -87,6 +87,36 @@ namespace vetor
             Console.WriteLine("A soma dos números pares é: " + somaPar);
             Console.WriteLine("A soma dos números ímpares é: " + somaImpar);
         }
+        public static void Exercício3()
+        {
+            // Números ordem crescente e decrescente
+
+            int[] vet2;
+            float soma = 0, div;
+            Console.WriteLine("Entre com o tamanho: ");
+            int t = int.Parse(Console.ReadLine());
+
+            vet2 = new int[t];
+            Random rand = new Random();
+
+            for (int i = 0; i < t; i++)
+            {
+                vet2[i] = rand.Next(10, 50);// rand.Next() cria números aleatório
+                soma += vet2[i];
+            }
+            for (int i = 0; i < t; i++)
+            {
+                Console.WriteLine("Põsição[{0}] = {1}", i, vet2[i]);
+            }
+            Array.Reverse(vet2);
+            Console.WriteLine("");
+            for (int i = 0; i < t; i++)
+            {
+                Console.WriteLine("Põsição[{0}] = {1}", i, vet2[i]);
+            }
+            div = soma / t;
+            Console.WriteLine("A média é: " + div);
+        }
         public static void Exercício4()
         {
             //média vetor divisível por 3 e 5
@@ -141,31 +171,7 @@ namespace vetor
                     Exercício2();
                     break;
                 case 4:
-                    //números aleatórios
-
-                    int[] vet2;
-                    float soma = 0, div;
-                    Console.WriteLine("Entre com o tamanho: ");
-                    int t = int.Parse(Console.ReadLine());
-
-                    vet2 = new int[t];
-                    Random rand = new Random();
-
-                    for (int i = 0; i < t; i++)
-                    {
-                        vet2[i] = rand.Next(10, 50);// rand.Next() cria números aleatório
-                        soma += vet2[i];
-                    }
-                    for (int i = 0; i < t; i++)
-                    {
-                        Console.WriteLine("Põsição[{0}] = {1}", i, vet2[i]);
-                        Array.Sort(vet2);
-                        Console.WriteLine(vet2);
-                        Array.Reverse(vet2);
-                        Console.WriteLine(vet2);
-                    }
-                    div = soma / t;
-                    Console.WriteLine("A média é: " + div);
+                    Exercício3();
                     break;
                 case 5:
                     Exercício4();
